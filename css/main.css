@@ -63,6 +63,7 @@ header {
     background-color: white;
     box-shadow: 0 0 10px rgb(0 0 0 / .1);
     margin-inline: auto;
+    z-index: 100;
 }
 header .container {
     display: flex;
@@ -265,6 +266,9 @@ header .container .menu-mobile-btn:hover span:first-child {
         margin-left: 3rem;
     }
 }
+header .container nav.show-menu {
+    display: block;
+}
 /* Navigation bar styling End */
 
 /* Hero Section Styling Start */
@@ -283,41 +287,43 @@ header .container .menu-mobile-btn:hover span:first-child {
 .hero .container .illustration {
     width: 80%;
     align-self: flex-end;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .hero .container .illustration img {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
 }
 .hero .container h1 {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .hero .container p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
 }
 .hero .container .bouncer {
-    width: 30px;
-    height: 75px;
+    position: relative;
+    width: 20px;
+    height: 60px;
     background-image: url("/images/scroll.svg");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     animation-name: bounce;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    
 
 }
 @keyframes bounce {
     from {
-        transform: translateY(-15px);
-        -webkit-transform: translateY(-15px);
-        -moz-transform: translateY(-15px);
-        -ms-transform: translateY(-15px);
-        -o-transform: translateY(-15px);
-    } 
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+} 
     to {
         transform: translateY(10px);
         -webkit-transform: translateY(10px);
@@ -330,8 +336,100 @@ header .container .menu-mobile-btn:hover span:first-child {
     .hero .container .illustration {
         width: fit-content;
         align-self: center;
-        padding-left: 4em;
-        
+        margin-bottom: .5rem;
+        transform: translateX(4rem);
+        -webkit-transform: translateX(4rem);
+        -moz-transform: translateX(4rem);
+        -ms-transform: translateX(4rem);
+        -o-transform: translateX(4rem);
+}
+    .hero .container .illustration img {
+        width: 100%;
+        max-width: 400px;
+    }
+    .hero .container h1 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .hero .container p {
+        font-size: 1.6rem;
     }
 }
 /* Hero Section Styling End */
+
+/* Features Section Styling Start */
+.features {
+    position: relative;
+    background-color: #00c2ff;
+    padding: 4rem 0%;
+    transform: skewY(-5deg);
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    border-top-left-radius: 2.5rem;
+}
+.features::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 40px;
+    right: 0%;
+    top:-39px;
+    background-color: #00c2ff;
+}
+.features::before {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 40px;
+    right: 0%;
+    top:-40px;
+    background-color: white;
+    border-bottom-right-radius: 2.5rem;
+
+    z-index: 2;
+}
+.features .container {
+    transform: skewY(5deg);
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    justify-items: center;
+    gap: 2rem;
+}
+.features .container .box {
+    text-align: center;
+    width: 80%;
+    padding: 1rem;
+    background-color: rgb(0 185 255);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.features .container .box  img {
+    width: 70px;
+}
+.features .container .box:last-child img {
+    width: auto;
+    height: 80px
+}
+.features .container .box p {
+    color: white;
+    line-height: 1.6;
+}
+@media (min-width:768px) {
+    .features .container {
+        transform: skewY(5deg);
+        -webkit-transform: skewY(5deg);
+        -moz-transform: skewY(5deg);
+        -ms-transform: skewY(5deg);
+        -o-transform: skewY(5deg); 
+    }
+}
+/* Features Section Styling End */
