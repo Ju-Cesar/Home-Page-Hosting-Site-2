@@ -13,13 +13,13 @@
         <header class="navbar">
             <div class="container">
                 <a href="#" class="logo"><img src="images/logo.svg" alt=""></a>
-                <div class="menu-mobile-btn">
+                <div id="ham-menu" class="menu-mobile-btn">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <nav>
-                    <div class="close-menu-btn"></div>
+                    <div id="close-menu" class="close-menu-btn"></div>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Services</a></li>
@@ -45,7 +45,7 @@
         <!-- Hero Section Bar End -->
 
         <!-- Features Section Start -->
-        <section class="Features">
+        <section class="features">
             <div class="container">
                 <div class="box">
                     <img src="images/icon-1.svg" alt="a calendar icon">
@@ -97,8 +97,8 @@
         <footer>
             <div class="container">
                 <div class="content">
-                    <img src="images/logo.svg" alt="logo" class="footer-logo">
-                    <address>Melrose Place, 90210 USA</address>
+                    <img src="images/logo-white.svg" alt="logo" class="footer-logo">
+                    <address>Melrose Place, 90210<br>USA</address>
                     <div class="links">
                         <a href="#">Terms of Service</a>
                         <a href="#">Privacy Policy</a>
@@ -107,5 +107,18 @@
             </div>
         </footer>
         <!-- Footer End -->
+
+        <!-- Javascript Code for the navigation menu on small screens -->
+        <!-- Start -->
+        <script>
+            const mobileMenu = document.getElementById("ham-menu");
+            const closeMenu = document.getElementById("close-menu");
+            const navigation = document.querySelector("nav");
+            const hideBouncer = document.querySelector(".bouncer");
+
+            mobileMenu.addEventListener('click', () => navigation.classList.add("show-menu"));
+            closeMenu.addEventListener('click',() => navigation.classList.remove("show-menu"));
+        </script>
+        <!-- End -->
     </body>
 </html>
